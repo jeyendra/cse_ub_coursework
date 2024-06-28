@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bulk Insert and Custom Queries</title>
+</head>
+<body>
+
+
+<div align="center">
+    <br><br>
+    <div class="dropdown">
+        <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+                <span>Select a table </span>
+                <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+            </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+            <div class="dropdown-content">
+                <a class="dropdown-item">
+                    Player Details
+                </a>
+                <a class="dropdown-item">
+                    Team
+                </a>
+                <a class="dropdown-item">
+                    Ball By Ball
+                </a>
+                <a class="dropdown-item">
+                    Match
+                </a>
+                <a class="dropdown-item">
+                    Season
+                </a>
+                <a class="dropdown-item">
+                    Player_Match
+                </a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <label class="label"> Bulk insertion into table </label>
+    <br>
+    <div class="box">
+    <textarea class="textarea" placeholder="Inser Comma separated Values"></textarea>
+        </div>
+    <button class="button is-light is-medium is-info"> Bulk Insert into Table</button>
+    <br>
+    <br>
+    <br>
+    <label class="label"> To Execute Custom Commands </label>
+    <div class="box">
+    <textarea class="textarea" placeholder="Enter a Custom SQL Query to get output"></textarea>
+    </div>
+    <button align="center" class="button is-light is-medium is-info">Execute The commannd</button>
+
+</div>
+
+</body>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+<script>
+
+    var dropdown = document.querySelector('.dropdown');
+    dropdown.addEventListener('click', function (event) {
+        event.stopPropagation();
+        dropdown.classList.toggle('is-active');
+    });
+
+</script>
+</html>

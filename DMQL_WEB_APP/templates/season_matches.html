@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Matches</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+
+        th:hover {
+            background-color: #ff8e97;
+        }
+
+        tr:hover {
+            background-color: hsl(217, 71%, 53%);
+        }
+
+        tr {
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+
+<br>
+<br>
+<div class="columns is-centered">
+    <table class="table">
+        <th><h2 class="title is-5 has-text-centered"> Matches Conducted in the year {{year}} </h2></th>
+        <tr></tr>
+        <tr></tr>
+        <tbody>
+        {% for idx in range(len) %}
+        <tr class="box clickable-row" href="match/{{match_details[idx][0]}}">
+
+            <th> {{idx+1}}</th>
+            <td class="has-text-centered"><span> {{match_details[idx][1]}} </span> <br> <span> vs </span> <br>
+                <span>{{match_details[idx][2]}} </span></td>
+            <td class="has-text-centered"> {{match_details[idx][7] }} <br> {{match_details[idx][6] }} <br>
+                {{match_details[idx][8] }}
+            </td>
+            {% if match_details[idx][4] == "Tie" %}
+            <td class="has-text-centered"> {{match_details[idx][4] }}</td>
+            {% else %}
+            <td class="has-text-centered"> {{match_details[idx][3] }} won by {{match_details[idx][5]}}
+                {{match_details[idx][4]}}
+            </td>
+            {% endif %}
+            <td> <a class="tag is-info" href="match/{{match_details[idx][0]}}"> more Details </a> </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+<script>
+    jQuery(document).ready(function ($) {
+        $(".clickable-row").click(function () {
+            window.location = $(this).data("href");
+        });
+    });
+</script>
+</html>

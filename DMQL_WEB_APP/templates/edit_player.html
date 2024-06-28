@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Player Data</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+
+<form action='/player/edit/{{player[0]}}' method="POST">
+    <div align="center">
+        <div align="center" class="box column is-half">
+            <label class="label">Player Id</label> <input type="integer" value="{{player[0]}}" class="input is-success is-focused"
+                                                          name="player_id"/>
+            <label class="label">Player Name </label> <input type="text" value="{{player[1]}}" class="input is-success is-focused"
+                                                             name="player_name"/>
+            <label class="label">Player Date of Birth</label> <input type="date" value="{{player[2]}}" name="date_of_birth"/>
+            <label class="label">Batting hand</label> <input type="text" value="{{player[3]}}" class="input is-success is-focused"
+                                                             name="batting_hand"/>
+            <label class="label">Bowling Type</label> <input type="text" value="{{player[3]}}" class="input is-success is-focused"
+                                                             name="bowling"/>
+            <label class="label">Country</label> <input type="text" value="{{player[4]}}" class="input is-success is-focused" name="country"/>
+            <input type="submit" value="Submit"/>
+        </div>
+    </div>
+</form>
+
+
+</body>
+</html>

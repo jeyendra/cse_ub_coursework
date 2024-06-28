@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teams</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+<div align="center">
+<p class="title is-3"> Teams List </p>
+</div>
+<br>
+<div class="buttons is-right">
+<a class="button is-small is-link is-right" href="/addTeam"> addTeam </a>
+</div>
+<div align="center">
+    <table class="table is-bordered is-striped is-narrow is-hoverable">
+        {% for team in teams %}
+        <tr>
+            <th>
+                {{team[0]}}
+            </th>
+            <td>
+                {{team[1]}}
+            </td>
+            <td>
+                {{team[2]}}
+            </td>
+            <td>
+                <a class="button is-small is-success" href="/edit_team/{{team[0]}}">edit</a>
+                <a href="/delete_team/{{team[0]}}" class="button is-small is-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Players Information</title>
+</head>
+<body>
+
+
+<div align="center">
+    <p class="title is-3"> Players Details </p>
+</div>
+<br>
+<div class="buttons is-right">
+    <a class="button is-small is-link is-right" href="/addplayer"> Add New Player </a>
+</div>
+<div align="center" class="box">
+    <table class="table is-bordered is-striped is-narrow is-hoverable ">
+        {% for player in players %}
+        <tr>
+            <th>
+                {{player[0]}}
+            </th>
+            <td>
+                {{player[1]}}
+            </td>
+            <td>
+                {{player[2]}}
+            </td>
+            <td>
+                {{player[3]}}
+            </td>
+
+            <td>
+                {{player[4]}}
+            </td>
+
+            <td>
+                {{player[5]}}
+            </td>
+
+            <td>
+                <a class="button is-small is-success" href="/edit_player/{{player[0]}}">edit</a>
+                <a href="/delete_player/{{player[0]}}" class="button is-small is-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+</body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</html>

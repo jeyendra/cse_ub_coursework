@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Analysis of Chat Bot</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        var k = {{min_max_data | tojson}}
+        let nan_json_data = {{nan_json | tojson}};
+        google.charts.load("current", {packages: ["corechart", "bar"]});
+        google.charts.setOnLoadCallback(function () {
+            drawNanCountChart();
+        });
+
+
+        google.charts.load('current', {packages: ['corechart', 'line']});
+        google.charts.setOnLoadCallback(drawBasic);
+
+        google.charts.load('current', {packages: ['corechart', 'bar']});
+        google.charts.setOnLoadCallback(drawColColors);
+
+        function drawNanCountChart() {
+            let header = ['Topic', 'Number Of Queries']
+            let result = Object.keys(nan_json_data).map((key) => [key, nan_json_data[key]]);
+            result.unshift(header)
+            console.log(result)
+            var data = google.visualization.arrayToDataTable(result);
+
+            var options = {
+                title: 'Number of Queries with respect to a specific Topic',
+                hAxis: {
+                    title: 'Total Number Of Queries'
+                },
+                vAxis: {
+                    title: 'Topic'
+                },
+                axes: {
+                    x: {
+                        0: {side: 'top', label: 'Topic'} // Top x-axis.
+                    }
+                }
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+
+
+        function drawBasic() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'X');
+            data.addColumn('number', 'Relevency Score');
+            data.addRows({{line_data}})
+            var options = {
+                hAxis: {
+                    title: 'last Query'
+                },
+                vAxis: {
+                    title: 'Relevency Score'
+                }
+            };
+            var chart = new google.visualization.LineChart(document.getElementById('line_chart_div'));
+            chart.draw(data, options);
+        }
+
+        function drawColColors() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Topic');
+      data.addColumn('number', 'Max Relevency');
+      data.addColumn('number', 'Min Relevency');
+
+      data.addRows(k);
+
+      var options = {
+        title: 'Topic Wise Max and minimum Relevancy',
+        colors: ['#1979a9', '#edb879'],
+        hAxis: {
+          title: 'Topic',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
+        },
+        vAxis: {
+          title: 'Relevancy Score'
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('min_max_data'));
+      chart.draw(data, options);
+    }
+
+
+    </script>
+</head>
+<body>
+<table  style="width:100%"  class="columns">
+    <tr>
+        <td>
+            <div id="chart_div" style="width: 1000px; height: 1000px; border: 1px solid #ccc"></div>
+        </td>
+        <td>
+            <div id="line_chart_div" style="width: 1000px; height: 1000px; border: 1px solid #ccc"></div>
+        </td>
+    </tr>
+    <tr >
+        <td colspan = "2">
+            <div id="min_max_data" style="width: 2000px; height: 1000px; border: 1px solid #ccc"></div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

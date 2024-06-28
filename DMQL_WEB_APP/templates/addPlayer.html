@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Player'</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+<form action='/player/add' method="POST">
+    <div align="center">
+        <div align="center" class="box column is-half">
+            <label class="label">Player Id</label> <input type="integer" class="input is-success is-focused"
+                                                          name="player_id"/>
+            <label class="label">Player Name </label> <input type="text" class="input is-success is-focused"
+                                                             name="player_name"/>
+            <label class="label">Player Date of Birth</label> <input type="date" name="date_of_birth"/>
+            <label class="label">Batting hand</label> <input type="text" class="input is-success is-focused"
+                                                             name="batting_hand"/>
+            <label class="label">Bowling Type</label> <input type="text" class="input is-success is-focused"
+                                                             name="bowling"/>
+            <label class="label">Country</label> <input type="text" class="input is-success is-focused" name="country"/>
+            <input type="submit" class="button is-small is-info" value="Submit"/>
+        </div>
+    </div>
+</form>
+</body>
+
+<script>
+    // Initialize all input of type date
+    var calendars = bulmaCalendar.attach('[type="date"]', {startDate: new Date('10/24/2019')});
+
+    // Loop on each calendar initialized
+    for (var i = 0; i < calendars.length; i++) {
+        // Add listener to date:selected event
+        calendars[i].on('select', date => {
+            console.log(date);
+        });
+    }
+
+    // To access to bulmaCalendar instance of an element
+    var element = document.querySelector('#my-element');
+    if (element) {
+        // bulmaCalendar instance is available as element.bulmaCalendar
+        element.bulmaCalendar.on('select', function (datepicker) {
+            console.log(datepicker.data.value());
+        });
+    }
+
+</script>
+</html>

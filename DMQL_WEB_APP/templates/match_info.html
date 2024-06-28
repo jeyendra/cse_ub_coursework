@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Match_details </title>
+    <style>
+        .center {
+            margin: auto;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+<div class="">
+    <br>
+    <br>
+    <br>
+
+    <span> <span class="tag is-success is-light is-large">{{result[1]}} </span>  <span> VS </span>  <span
+            class="tag is-link is-light is-large">{{result[2]}}</span></span>
+    <br>
+    <br>
+    <div class="control">
+        <div class="tags has-addons">
+            <span class="tag is-primary is-light is-large">Date:</span>
+            <span class="tag is-info is-medium is-light"> {{result[0]}} </span>
+        </div>
+    </div>
+
+    <br>
+    <span> <span class="tag is-info is-large is-light">venue : </span><span class="tag is-primary is-light is-large">{{result[3]}} , {{result[13]}}, {{result[14]}}</span></span>
+    <br>
+    <span> <span class="is-medium tag is-success is-light"> {{result[4]}} </span> won the toss and choose to {{result[5]}}</span>
+    <br>
+    <span> <span class="tag is-primary is-large"> {{result[9]}} </span> won by {{result[8]}} {{result[7]}}</span>
+    <br>
+
+
+    <div class="control">
+        <div class="tags has-addons">
+            <span class="tag is-primary is-light is-large">  Man of the match:</span>
+            <span class="tag is-info is-medium is-light"> {{result[10]}} </span>
+        </div>
+    </div>
+
+
+    <div class="control">
+        <div class="tags has-addons">
+            <span class="tag is-primary is-light is-large"> First empire:</span>
+            <span class="tag is-info is-medium is-light"> {{result[11]}} </span>
+        </div>
+    </div>
+
+    <div class="control">
+        <div class="tags has-addons">
+            <span class="tag is-primary is-light is-large"> Second empire:</span>
+            <span class="tag is-info is-medium is-light"> {{result[12]}} </span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <meta charset="UTF-8">
+    <title>Performance</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+            let nan_json_data = {{ nan_json | tojson }};
+            google.charts.load("current", {packages:["corechart", "bar"]});
+            google.charts.setOnLoadCallback(function () {
+                drawNanCountChart();
+            });
+            function drawNanCountChart() {
+    let header = ['Batsmen', 'Boundary count']
+    let result = Object.keys(nan_json_data).map((key) => [key, nan_json_data[key]]);
+    result.unshift(header)
+    console.log(result)
+    var data = google.visualization.arrayToDataTable(result);
+
+    var options = {
+        title: 'Missing Values in different features of our dataset',
+        hAxis: {
+            title: 'Total Number of Boundaries'
+        },
+        vAxis: {
+            title: 'Batsmen name'
+        },
+        axes: {
+            x: {
+              0: { side: 'top', label: 'Boundaries'} // Top x-axis.
+            }
+          }
+    };
+
+    var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+}
+    </script>
+</head>
+<body>
+<table class="columns">
+            <tr>
+                <td><div id="chart_div" style="width: 1000px; height: 1000px; border: 1px solid #ccc"></div></td>
+            </tr>
+        </table>
+</body>
+</html>

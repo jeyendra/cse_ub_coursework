@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Team</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+<div align="center">
+    <div class="box column is-half">
+        <form action='/team/edit/{{team[0]}}' method="POST">
+            <label class="label">Team Id</label>
+            <input class="input is-success is-focused" value={{team[0]}} type="integer" data-place
+                   name="team_id"></input>
+            <label class="label">Team Name</label>
+            <input class="input is-success is-focused" value={{team[1]}} type="text" name="team_name"/>
+            <label class="label">Team Short Code </label>
+            <input class="input is-success is-focused" value={{team[2]}} type="text" name="team_short_code"/>
+            <br>
+            <br>
+            <div align="center">
+                <input class="button is-link" type="submit" value="Submit"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
