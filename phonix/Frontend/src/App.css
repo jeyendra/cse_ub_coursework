@@ -1,0 +1,92 @@
+/* General Style Definitions */
+:root {
+  --yellow: #fffff;
+  --teal: #007580;
+  --dark-blue: #282846;
+  --light-blue: #D8EBE4;
+}
+html{
+  background-color: #fefece;
+}
+
+.App{
+  display: flex;
+  background-color: #fdfdfb;
+}
+.navbar {
+  padding: 10px;
+  background-color: #acd9eb;
+  box-shadow: var(--lime-green);
+  /* justify-content: space-around;
+  align-items: center; */
+   flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  height: 1000px;
+}
+
+.nav-links {
+  margin-top: 20px; 
+}
+
+.content {
+  padding: 20px;
+  opacity: 0; 
+  animation: fadeIn 0.5s forwards; 
+  width:200%;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1; 
+  }
+}
+
+.homepage h1 {
+  color: var(--cream-white);
+}
+
+.homepage p {
+  color: #666666;
+}
+
+.nav-link, .activeLink {
+  display: block;
+  padding: 5px 10px;
+  margin: 4px 1px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  font-size: 14px;
+}
+
+.activeLink {
+  font-weight: bold;
+  color: #dfa23a;
+}
+
+
+.nav-link:hover {
+  background-color: #469de5; /* Change background on hover */
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 200px) {
+  .nav-link {
+    padding: 3px 7px;
+    font-size: 12px;
+  }
+}
+
+.logo-class {
+  width: 150px; /* Adjust the size as needed */
+  height: auto;
+}
+
+
+.home-content {
+  color: #554fd8; 
+  font-size: 2em;
+  padding: 2px;
+}

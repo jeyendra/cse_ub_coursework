@@ -1,0 +1,3 @@
+nltk~=3.8.1
+pysolr~=3.9.0
+speechbrain~=0.5.15

@@ -1,0 +1,82 @@
+/* minimalCat.css */
+
+/* Container styles */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Title styles */
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Input container styles */
+  .input-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  /* Input field styles */
+  .input-container input {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Fetch button styles */
+  .input-container button {
+    padding: 10px 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Minimal Pairs list styles */
+  h2 {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Minimal Pairs item styles */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  /* No Minimal Pairs message styles */
+  p {
+    font-size: 16px;
+    margin-top: 20px;
+    color: #777;
+  }
+  
+.wordlink {
+  cursor: pointer; 
+  display: inline-block; 
+  background-color: #007bff; 
+  color: #fff; 
+  padding: 6px 12px; 
+  border: none;
+  border-radius: 4px; 
+  font-weight: bold; 
+  text-decoration: none; 
+  transition: background-color 0.3s; 
+}
+
+.wordlink:hover {
+  background-color: #0056b3; 
+}

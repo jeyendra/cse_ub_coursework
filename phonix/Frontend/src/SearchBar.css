@@ -1,0 +1,43 @@
+.searchbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for elevation */
+}
+
+.searchbar-input {
+    padding: 12px 20px; /* Increase padding for a more comfortable space */
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px; 
+    outline: none;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif; /* Change font to something more modern */
+    width: 500px; /* Ensuring a minimum width */
+    transition: border-color 0.3s; /* Adding transition for smoother effect */
+}
+
+.searchbar-input:focus {
+    border-color: #007BFF; /* Changing border color on focus */
+}
+
+.searchbar-button {
+    margin-top: 35px;
+    padding: 12px 25px; /* Increase padding for a more comfortable space */
+    border: none;
+    background-color: #1645b4;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    transition: background-color 0.3s, transform 0.3s; /* Add transform to transition */
+    font-family: 'Arial', sans-serif; /* Consistent font */
+}
+
+.searchbar-button:hover {
+    background-color: #01474e;
+    transform: scale(1.05); /* Slight enlargement on hover for an interactive feel */
+}
+
+.heading{
+    color: #007580;
+}

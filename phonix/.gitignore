@@ -1,0 +1,7 @@
+/venv/
+/.idea/
+/Data-Scripts/pretrained_models/
+.DS_Store
+/Frontend/node_modules/
+/node_modules/
+/DeploymentFiles/node/Frontend

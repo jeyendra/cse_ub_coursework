@@ -1,0 +1,30 @@
+.features-grid {
+    display: flex;
+    gap: 16px; 
+  }
+  
+  .feature-card-search {
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    width: 500px;
+    background-color: rgb(237, 237, 237);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    background-color: #ffea32bb;
+  }
+
+  .bottom-left-image {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    width: 250px; /* Adjust the percentage as needed */
+    height: auto;
+  }
+  

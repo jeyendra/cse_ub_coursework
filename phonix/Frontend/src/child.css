@@ -1,0 +1,78 @@
+/* Child-friendly styles for the entire app */
+.App {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7e1d7;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #ff5f40;
+  }
+  
+  /* Search input and button styles */
+  input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  button.search-button {
+    background-color: #42b883;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  /* Result section styles */
+  .result-section {
+    background-color: #f9ebc2;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+  }
+  
+  h2 {
+    color: #3b86ff;
+  }
+  
+  /* Individual result item styles */
+  .result-item {
+    display: inline-block;
+    background-color: #d9c6e3;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  /* Result table styles */
+  .result-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9ebc2;
+    border-radius: 10px;
+  }
+  
+  .result-table th, .result-table td {
+    border: 1px solid #3b86ff;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .result-table th {
+    background-color: #3b86ff;
+    color: white;
+  }
+  
+  /* Individual table cell styles */
+  .result-table .result-item {
+    background-color: #d9c6e3;
+    color: #3b86ff;
+    font-weight: bold;
+  }
